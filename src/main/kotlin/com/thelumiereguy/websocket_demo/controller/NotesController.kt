@@ -25,11 +25,6 @@ class NotesController {
         return Note("Welcome ${note.text}")
     }
 
-    @SubscribeMapping("/register")
-    fun register(user: String): String {
-        println("Thank you $user")
-        return "Thank you $user"
-    }
 }
 
 @Component
