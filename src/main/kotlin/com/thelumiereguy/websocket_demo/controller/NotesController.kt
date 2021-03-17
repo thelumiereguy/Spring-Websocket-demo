@@ -35,9 +35,6 @@ class WebSocketPingScheduler {
     lateinit var brokerMessagingTemplate: SimpMessagingTemplate
 
 
-    @Autowired
-    lateinit var objectMapper: ObjectMapper
-
     @Scheduled(fixedDelay = 3000L)
     fun webSocketPing() {
         print("hello")
