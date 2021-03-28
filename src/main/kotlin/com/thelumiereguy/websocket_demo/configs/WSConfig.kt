@@ -12,12 +12,13 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 class WSConfig : WebSocketMessageBrokerConfigurer {
 
     override fun registerStompEndpoints(registry: StompEndpointRegistry) {
+        //base ws endpoint
         registry.addEndpoint("/gs-guide-websocket").setAllowedOriginPatterns("*")
     }
 
     override fun configureMessageBroker(registry: MessageBrokerRegistry) {
-        registry.enableSimpleBroker("/topic")
-        registry.setApplicationDestinationPrefixes("/app")
+        registry.enableSimpleBroker("/topic") //Subscribe
+        registry.setApplicationDestinationPrefixes("/app") //Incoming
     }
 
 }
